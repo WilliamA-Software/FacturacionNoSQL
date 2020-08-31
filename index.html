@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Inicio</title>
+  <link href="assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <script src="assets/js/jquery.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="jumbotron">
+          Facturacion
+        </h1>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand"> >> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Inicio</a></li>
+                <li><a href="Factura/agregarFactura.html">Agregar Factura</a></li>
+                <li><a href="Factura/consultarFactura.html">Consultar Factura</a></li>
+
+                <!-- Desplegable de Clientes-->
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
+                    <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="Cliente/crearCliente.html">Nuevo Cliente</a></li>
+                    <li><a href="Cliente/modificarCliente.html">Modificar Cliente</a></li>
+                  </ul>
+                </li>
+
+                <!-- Desplegable de Productos-->
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos
+                    <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="Articulo/crearProducto.html">Nuevo Producto</a></li>
+                    <li><a href="Articulo/modificarProducto.html">Modificar Producto</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+        <hr />
+        <h1>Sistema con Base de datos NoSQL (Firebase)</h1>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAoLdoai0nOHQP6ZbxwkMv9qSbCxs9AkjY",
+    authDomain: "facturacion-e4782.firebaseapp.com",
+    databaseURL: "https://facturacion-e4782.firebaseio.com",
+    projectId: "facturacion-e4782",
+    storageBucket: "facturacion-e4782.appspot.com",
+    messagingSenderId: "563203975318",
+    appId: "1:563203975318:web:e747d176f9afce037cfab7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+        
+<!-- INSERTAR VINCULACION CON FIREBASE_____________________________________ -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- Llamar a la base de datos de Firebase-->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<!-- Llamar a la autenticacion de Firebase-->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+<!-- Llamar a la Database-Realtime de Firebase-->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<!-- Llamar al Almacenamiento Firestore de Firebase-->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<!--CIERRE DE IMPORTACION DE FIREBASE-->
+
+<script>
+  var firebaseConfig = {
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/js-render.js"></script>
+<script src="assets/js/facturador.js"></script>
+ 
+  </body>
+</html>

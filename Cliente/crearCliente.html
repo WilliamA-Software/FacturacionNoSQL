@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Crear Cliente</title>
+    
+        <link href="../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+        
+        <script src="../assets/js/jquery.js"></script>
+    </head>
+    <body>
+
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="jumbotron">
+                        Nuevo Cliente
+                    </h1>
+                    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand"> >> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="../index.html">Inicio</a></li>
+        <li ><a href="../Factura/agregarFactura.html">Agregar Factura</a></li>
+        <li><a href="../Factura/consultarFactura.html">Consultar Factura</a></li>
+        
+        <!-- Desplegable de Clientes-->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../Cliente/crearCliente.html">Nuevo Cliente</a></li>
+            <li><a href="../Cliente/modificarCliente.html">Modificar Cliente</a></li>
+          </ul>
+        </li>
+
+        <!-- Desplegable de Productos-->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../Articulo/crearProducto.html">Nuevo Producto</a></li>
+            <li><a href="../Articulo/modificarProducto.html">Modificar Producto</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+                    
+                    
+
+                    
+                    <hr />
+                    
+                    <div class="col-md-12">
+                  <div class="login-purple-pink p-3 rounded" style="background: #CFC9C9;">
+                          <form  action="login.php" method="POST" class="mt-1">
+                     
+                                      <div class="form-group">
+                                        <input id = "txtID" type="text" class="form-control form-control-sm bg-light" placeholder="ID" />
+                                          <input id = "txtNombres" type="text" class="form-control form-control-sm bg-light" placeholder="Nombres" />
+                                          <input id = "txtCorreo" type="text"class="form-control form-control-sm bg-light" placeholder="Correo"  />
+                                      </div>
+
+                                      <div>
+                                        <input type="button" value="Agregar Cliente" onclick="agregarCliente(); " class="col text-center btn btn-success" id="btnAgregarTaxi" style="text-align: center;">
+                                      </div>                        
+                              </form> 
+                          </div>
+                      </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Llamar a la base de datos de Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <!-- Llamar a la autenticacion de Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <!-- Llamar a la Database-Realtime de Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <!-- Llamar al Almacenamiento Firestore de Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <!--CIERRE DE IMPORTACION DE FIREBASE-->
+
+
+    <!--NUESTRA CONEXION AL PROYECTO DE FIREBASE-->
+    <script src="../assets/js/app.js"></script>
+    <script src="createCliente.js"></script>
+
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js-render.js"></script>
+    <script src="../assets/js/facturador.js"></script>
+ 
+  </body>
+</html>

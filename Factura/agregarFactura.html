@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Factura</title>
+  <link href="../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <script src="../assets/js/jquery.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="jumbotron">
+          Crear Factura
+        </h1>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand"> >> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="active"><a href="../Factura/agregarFactura.html">Agregar Factura</a></li>
+                <li><a href="../Factura/consultarFactura.html">Consultar Factura</a></li>
+
+                <!-- Desplegable de Clientes-->
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
+                    <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="../Cliente/crearCliente.html">Nuevo Cliente</a></li>
+                    <li><a href="../Cliente/modificarCliente.html">Modificar Cliente</a></li>
+                  </ul>
+                </li>
+
+                <!-- Desplegable de Productos-->
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos
+                    <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="../Articulo/crearProducto.html">Nuevo Producto</a></li>
+                    <li><a href="../Articulo/modificarProducto.html">Modificar Producto</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+        <hr />
+
+        <div>
+          <div class="Container">
+            <section class="mx-12">
+              <div class="col-md-12">
+                <div class="col-md-12">
+
+
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+
+                      <div class="col-md-12" style="text-align: center; align-content: center;">
+                        <input type="text" name="txtFacturaID" id="txtFacturaID" placeholder="ID Factura">
+
+                        <input type="text" id="generaFacutra" placeholder="ID Cliente a facturar">
+                        <button type="button" id="btnFacturaID" onclick="facturaID();" class="btn btn-success"> Factura
+                          y Cliente </button>
+                        <br>
+                        <br>
+                        <input type="text" name="txtID" id="txtID" placeholder="ID Producto">
+                        <button type="button" onclick="canastaProducto();" class="btn btn-success"> + </button>
+                        <br>
+
+                        <table id="tblDatos" class="table table-striped table-responsive">
+                          <br>
+                          <tr>
+                            <td style=" width: 15%; text-align: center;">Id producto</td>
+
+                            <td style=" width: 25%; text-align: center;">Nombre</td>
+                            <td style=" width: 10%; text-align: center;">Cantidad</td>
+                            <td style=" width: 25%; text-align: center;">Precio U</td>
+
+                          </tr>
+
+                          <tr align="center">
+                            <td> <input type="text" name="txtIDc" id="txtIDc" disabled> </td>
+                            <td> <input type="text" name="txtNombre" id="txtNombre" disabled> </td>
+                            <td> <input type="text" name="txtCantidad" id="txtCantidad"></td>
+                            <td><input type="text" name="txtPrecio" id="txtPrecio" disabled> </td>
+
+                          </tr>
+
+                          <tr>
+                            <td colspan="4">
+                              <center>
+
+                                <button type="button" onclick="addRowFinal();" class="btn btn-success">Agregar a
+                                  factura</button>
+                              </center>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div> </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <td>
+      <fieldset>
+        <legend> Tabla de Resultados </legend>
+        <table id="tblGrid" class="table table-striped table-responsive" style=" background-color:#E8D908 ;">
+          <thead>
+            <tr>
+              <th style=" width: 100px; ">Id producto</th>
+              <th style=" width: 100px; ">Nombre</th>
+              <th style=" width: 100px; ">Precio</th>
+              <th style=" width: 100px; "> Cantidad </th>
+              <th style=" width: 100px; "> Valor </th>
+              <th style=" width: 100px; "> Eliminar </th>
+
+            </tr>
+          </thead>
+        </table>
+      </fieldset>
+    </td>
+
+    <input type="button" onclick="location.href='consultarFactura.html';" value="Generar Factura" />
+
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- Llamar a la base de datos de Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <!-- Llamar a la autenticacion de Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+  <!-- Llamar a la Database-Realtime de Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <!-- Llamar al Almacenamiento Firestore de Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <!--CIERRE DE IMPORTACION DE FIREBASE-->
+
+  <!--NUESTRA CONEXION AL PROYECTO DE FIREBASE-->
+  <script src="../assets/js/app.js"></script>
+
+  <script src="addFactura.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/js-render.js"></script>
+  <script src="../assets/js/facturador.js"></script>
+
+</body>
+
+</html>
